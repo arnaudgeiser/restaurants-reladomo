@@ -1,0 +1,11 @@
+<MithraObject objectType="transactional">
+  <PackageName>ch.hearc.ig.guideresto.business</PackageName>
+  <ClassName>BasicEvaluation</ClassName>
+  <SuperClass name="Evaluation" generated="true" />
+  <DefaultTable>LIKES</DefaultTable>
+
+  <Attribute name="likeRestaurant" javaType="boolean"
+    columnName="APPRECIATION" />
+  <Attribute name="ipAddress" javaType="String"
+    columnName="ADRESSE_IP" />
+</MithraObject>

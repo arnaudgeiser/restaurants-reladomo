@@ -1,0 +1,19 @@
+<MithraObject objectType="transactional">
+  <PackageName>ch.hearc.ig.guideresto.business</PackageName>
+  <ClassName>City</ClassName>
+  <DefaultTable>VILLES</DefaultTable>
+
+  <Attribute name="id" javaType="int"
+    columnName="NUMERO" primaryKey="true"/>
+  <Attribute name="zipCode" javaType="String"
+    columnName="CODE_POSTAL" />
+  <Attribute name="cityName" javaType="String"
+    columnName="NOM_VILLE" />
+  <Relationship name="restaurants"
+    relatedObject="Restaurant"
+    cardinality="one-to-many"
+    relatedIsDependent="true"
+    reverseRelationshipName="city">
+    this.id = Restaurant.cityId
+  </Relationship>
+</MithraObject>

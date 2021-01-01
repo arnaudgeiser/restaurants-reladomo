@@ -1,0 +1,10 @@
+<Mithra>
+  <MithraObjectResource name="EvaluationCriteria"/>
+  <MithraObjectResource name="City"/>
+  <MithraObjectResource name="Restaurant"/>
+  <MithraObjectResource name="RestaurantType"/>
+  <MithraObjectResource name="Evaluation"/>
+  <MithraObjectResource name="BasicEvaluation"/>
+  <MithraObjectResource name="CompleteEvaluation"/>
+  <MithraObjectResource name="Grade"/>
+</Mithra>

@@ -1,0 +1,19 @@
+<MithraObject objectType="transactional">
+  <PackageName>ch.hearc.ig.guideresto.business</PackageName>
+  <ClassName>RestaurantType</ClassName>
+  <DefaultTable>TYPES_GASTRONOMIQUES</DefaultTable>
+
+  <Attribute name="id" javaType="int"
+    columnName="NUMERO" primaryKey="true"/>
+  <Attribute name="label" javaType="String"
+    columnName="LIBELLE" />
+  <Attribute name="description" javaType="String"
+    columnName="DESCRIPTION" />
+  <Relationship name="restaurants"
+    relatedObject="Restaurant"
+    cardinality="one-to-many"
+    relatedIsDependent="true"
+    reverseRelationshipName="type">
+    this.id = Restaurant.restaurantTypeId
+  </Relationship>
+</MithraObject>

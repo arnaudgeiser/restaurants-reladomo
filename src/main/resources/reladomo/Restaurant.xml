@@ -1,0 +1,34 @@
+<MithraObject objectType="transactional">
+  <PackageName>ch.hearc.ig.guideresto.business</PackageName>
+  <ClassName>Restaurant</ClassName>
+  <DefaultTable>RESTAURANTS</DefaultTable>
+
+  <Attribute name="id" javaType="int"
+    columnName="NUMERO" primaryKey="true"/>
+  <Attribute name="name" javaType="String"
+    columnName="NOM" />
+  <Attribute name="description" javaType="String"
+    columnName="DESCRIPTION" />
+  <Attribute name="website" javaType="String"
+    columnName="SITE_WEB" />
+  <Attribute name="street" javaType="String"
+    columnName="ADRESSE" />
+  <Attribute name="cityId" javaType="int"
+    columnName="FK_VILL" />
+  <Attribute name="restaurantTypeId" javaType="int"
+    columnName="FK_TYPE" />
+  <Relationship name="basicEvaluations"
+    relatedObject="BasicEvaluation"
+    cardinality="one-to-many"
+    relatedIsDependent="true"
+    reverseRelationshipName="restaurant">
+    this.id = BasicEvaluation.restaurantId
+  </Relationship>
+  <Relationship name="completeEvaluations"
+    relatedObject="CompleteEvaluation"
+    cardinality="one-to-many"
+    relatedIsDependent="true"
+    reverseRelationshipName="restaurant">
+    this.id = CompleteEvaluation.restaurantId
+  </Relationship>
+</MithraObject>

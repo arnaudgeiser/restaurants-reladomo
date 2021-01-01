@@ -1,0 +1,18 @@
+<MithraObject objectType="transactional">
+  <PackageName>ch.hearc.ig.guideresto.business</PackageName>
+  <ClassName>CompleteEvaluation</ClassName>
+  <SuperClass name="Evaluation" generated="true"/>
+  <DefaultTable>COMMENTAIRES</DefaultTable>
+
+  <Attribute name="comment" javaType="String"
+    columnName="COMMENTAIRE" />
+  <Attribute name="username" javaType="String"
+    columnName="NOM_UTILISATEUR" />
+  <Relationship name="grades"
+    relatedObject="Grade"
+    cardinality="one-to-many"
+    relatedIsDependent="true"
+    reverseRelationshipName="evaluation">
+    this.id = Grade.evaluationId
+  </Relationship>
+</MithraObject>

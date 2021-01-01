@@ -1,0 +1,18 @@
+<MithraRuntime>
+  <ConnectionManager className="ch.hearc.ig.guideresto.persistence.reladomo.ReladomoConnectionManager">
+    <MithraObjectConfiguration
+      className="ch.hearc.ig.guideresto.business.Restaurant" cacheType="partial"/>
+    <MithraObjectConfiguration
+      className="ch.hearc.ig.guideresto.business.City" cacheType="partial"/>
+    <MithraObjectConfiguration
+      className="ch.hearc.ig.guideresto.business.CompleteEvaluation" cacheType="partial"/>
+    <MithraObjectConfiguration
+      className="ch.hearc.ig.guideresto.business.BasicEvaluation" cacheType="partial"/>
+    <MithraObjectConfiguration
+      className="ch.hearc.ig.guideresto.business.Grade" cacheType="partial"/>
+    <MithraObjectConfiguration
+      className="ch.hearc.ig.guideresto.business.RestaurantType" cacheType="partial"/>
+    <MithraObjectConfiguration
+      className="ch.hearc.ig.guideresto.business.EvaluationCriteria" cacheType="partial"/>
+  </ConnectionManager>
+</MithraRuntime>

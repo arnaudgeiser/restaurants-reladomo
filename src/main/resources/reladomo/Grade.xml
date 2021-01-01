@@ -1,0 +1,19 @@
+<MithraObject objectType="transactional">
+  <PackageName>ch.hearc.ig.guideresto.business</PackageName>
+  <ClassName>Grade</ClassName>
+  <DefaultTable>NOTES</DefaultTable>
+
+  <Attribute name="id" javaType="int"
+    columnName="NUMERO" primaryKey="true"/>
+  <Attribute name="grade" javaType="int"
+    columnName="NOTE" />
+  <Attribute name="evaluationId" javaType="int"
+    columnName="FK_COMM" />
+  <Attribute name="evaluationCriteriaId" javaType="int"
+    columnName="FK_CRIT" />
+  <Relationship name="criteria"
+    relatedObject="EvaluationCriteria"
+    cardinality="many-to-one">
+    this.evaluationCriteriaId = EvaluationCriteria.id
+  </Relationship>
+</MithraObject>

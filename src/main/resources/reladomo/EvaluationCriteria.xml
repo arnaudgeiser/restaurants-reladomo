@@ -1,0 +1,12 @@
+<MithraObject objectType="transactional">
+  <PackageName>ch.hearc.ig.guideresto.business</PackageName>
+  <ClassName>EvaluationCriteria</ClassName>
+  <DefaultTable>CRITERES_EVALUATION</DefaultTable>
+
+  <Attribute name="id" javaType="int"
+    columnName="NUMERO" primaryKey="true"/>
+  <Attribute name="name" javaType="String"
+    columnName="NOM" />
+  <Attribute name="description" javaType="String"
+    columnName="DESCRIPTION" />
+</MithraObject>

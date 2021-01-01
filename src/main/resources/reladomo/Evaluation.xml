@@ -1,0 +1,13 @@
+<MithraObject objectType="transactional" superClassType="table-per-subclass">
+  <PackageName>ch.hearc.ig.guideresto.business</PackageName>
+  <ClassName>Evaluation</ClassName>
+
+  <Attribute name="id"
+    javaType="int"
+    columnName="NUMERO"
+    primaryKey="true" />
+  <Attribute name="visitDate" javaType="Date"
+    columnName="DATE_EVAL"/>
+  <Attribute name="restaurantId" javaType="int"
+    columnName="FK_REST" />
+</MithraObject>
