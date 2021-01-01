@@ -1,6 +1,6 @@
 # Development
 
-You need to have Docker installed.
+You need to have Docker installed.  
 Before running the application, an Oracle database instance should
 be started.
 
