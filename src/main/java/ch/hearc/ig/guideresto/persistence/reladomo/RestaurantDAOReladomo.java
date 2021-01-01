@@ -1,7 +1,9 @@
 package ch.hearc.ig.guideresto.persistence.reladomo;
 
+import ch.hearc.ig.guideresto.business.CompleteEvaluationFinder;
 import ch.hearc.ig.guideresto.business.Restaurant;
 import ch.hearc.ig.guideresto.business.RestaurantFinder;
+import ch.hearc.ig.guideresto.business.RestaurantList;
 import ch.hearc.ig.guideresto.business.RestaurantType;
 import ch.hearc.ig.guideresto.persistence.RestaurantDAO;
 import java.util.HashSet;
@@ -16,7 +18,11 @@ public class RestaurantDAOReladomo implements RestaurantDAO {
 
   @Override
   public Set<Restaurant> researchAll() {
-    return new HashSet<>(RestaurantFinder.findMany(RestaurantFinder.all()));
+    RestaurantList restaurants = RestaurantFinder.findMany(RestaurantFinder.all());
+    restaurants.deepFetch(RestaurantFinder.basicEvaluations());
+    restaurants.deepFetch(RestaurantFinder.completeEvaluations());
+    restaurants.deepFetch(RestaurantFinder.completeEvaluations().grades());
+    return new HashSet<>(restaurants);
   }
 
   @Override
@@ -36,7 +42,9 @@ public class RestaurantDAOReladomo implements RestaurantDAO {
 
   @Override
   public Restaurant researchById(Integer id) {
-    return RestaurantFinder.findOne(RestaurantFinder.id().eq(id));
+    Restaurant restaurant = RestaurantFinder.findOne(RestaurantFinder.id().eq(id));
+    restaurant.getCompleteEvaluations().deepFetch(CompleteEvaluationFinder.grades());
+    return restaurant;
   }
 
   @Override
